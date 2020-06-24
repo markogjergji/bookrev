@@ -1,0 +1,231 @@
+*{
+    margin:0;
+    padding:0;
+    font-family: 'Balsamiq Sans', cursive;
+    overflow-x: hidden;
+}
+
+body{
+    background-color: #360A29 ;
+}
+
+#title{
+    color:white;
+    text-align: center;
+    font-size: 4em;
+}
+#button-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top:120px;
+}
+
+.buttons{
+    width:18em;
+    height:6em;
+    font-size: large;
+    border-radius: 10px;
+    color : #360A29 ;
+    margin-top:15px;
+    margin-bottom:15px;
+}
+
+#input-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top:60px;
+    overflow: auto;
+}
+#input-container > h1{
+    color:white;
+}
+
+.inputs{
+    width:18em;
+    height:3em;
+    font-size: large;
+    border-radius: 10px;
+    color : #360A29 ;
+    margin-top:15px;
+    margin-bottom:15px;
+    padding-left:5px;
+}
+
+#login-input{
+    margin-top:120px;
+}
+
+#submit{
+    margin-top:50px;
+}
+
+#search-input{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top:140px;
+    overflow: auto;
+}
+#search-input > input{
+    width:40em;
+    height:3em;
+    font-size: large;
+    border-radius: 10px;
+    color : #360A29 ;
+    padding-left:5px;
+}
+#book-results-container{
+    margin-top : 50px;
+    display:grid;  
+  grid-template-columns:repeat(4,1fr);
+  grid-gap:10px;
+
+}
+.books{
+    text-decoration: none;
+    background-color: #D6B2CC ;
+    height:100px;
+    border:3px solid #af7fa1;
+    border-radius:10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.books > a{
+    text-decoration: none;
+    color: #360A29;
+    
+}
+
+
+#logged-in-user{
+    overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 80px;
+  background-color: #D6B2CC;
+  border-top:3px solid white;
+}
+
+#logged-in-user h2{
+    float: left;
+    display: block;
+    color: #360A29;
+    text-align: center;
+    padding-top: 25px;
+    padding-left: 30px;
+    font-size: 30px; 
+}
+#logged-in-user button{
+    float:right;
+    display: block;
+    color: #360A29;
+    text-align: center;
+    padding-top: 25px;
+    padding-right: 30px;
+    font-size: 30px;
+    border:none;
+    background: none; 
+    outline: none;
+}
+#logged-in-user button:hover{
+    cursor:pointer;
+}
+
+.empty-space{
+    width: 100%;
+    height:60px;
+}
+
+.review-container{
+    display:grid;
+    margin-left:70px;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.review-container img{
+    
+    width:400px;
+    height: auto;
+    border:2px solid white;
+
+    
+}
+.info-container{
+    display:grid;
+}
+.info-container > h1{
+    width: 400px;
+    border:3px solid white;
+}
+
+.info-elements{
+    color:white;
+}
+textarea{
+    width:400px;
+    height:400px;
+    resize: none;
+}
+.rating {
+    overflow: hidden;
+    display: inline-block;
+    width: auto;
+    height: 30px;
+    padding-right: 300px;
+  }
+  
+  .rating > input {
+    opacity: 0;
+  }
+  
+  .rating > label {
+    position: relative;
+    display: block;
+    float: right;
+    background: url('star-off-big.png');
+    background-size: 30px 30px;
+  }
+  
+  .rating > label:before {
+    display: block;
+    opacity: 0;
+    content: '';
+    width: 30px;
+    height: 30px;
+    background: url('star-on-big.png');
+    background-size: 30px 30px;
+    transition: opacity 0.2s linear;
+  }
+  
+  .rating > label:hover:before,  .rating > label:hover ~ label:before,  .rating:not(:hover) > :checked ~ label:before { opacity: 1; }
+
+.small-container{
+    display: grid;
+    width:400px;
+    grid-template-columns: 80px 170px 1fr;
+    border: 3px solid white;
+}
+#button-review{
+    width:400px;
+}
+.other-reviews{
+    border:3px solid white;
+    margin-right:30px;
+}
+.other-reviews > h1{
+    color:white;
+}
+.user-ratings{
+    color:rgb(223, 215, 215);
+    padding-right: 30px;
+    padding-left:10px;
+}
+#search-input > h1{
+    color:white;
+}

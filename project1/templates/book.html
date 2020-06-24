@@ -1,0 +1,51 @@
+{% extends "layout.html"%}
+
+{% block body %}
+<div class = "review-container">
+   <img src="http://covers.openlibrary.org/b/isbn/{{value}}-L.jpg">
+   <div class= "info-container">
+        <h1 class="info-elements">{{title}}</h1>
+        <div class="small-container">
+            <h2 class="info-elements">{{year}}</h2>
+            <h2 class="info-elements">{{author}}</h2>
+            <h2 class="info-elements">{{isbn}}</h2>
+        </div>
+        
+        <form action="{{ url_for('submit',bookname = title,user = user)}}" method="POST">
+            
+        <span class="rating">
+            <input id="rating5" type="radio" name="rating5" value="5">
+            <label for="rating5">5</label>
+            <input id="rating4" type="radio" name="rating4" value="4">
+            <label for="rating4">4</label>
+            <input id="rating3" type="radio" name="rating3" value="3">
+            <label for="rating3">3</label>
+            <input id="rating2" type="radio" name="rating2" value="2">
+            <label for="rating2">2</label>
+            <input id="rating1" type="radio" name="rating1" value="1">
+            <label for="rating1">1</label>
+          </span>
+            <textarea type = "text" name="review" placeholder="Write your review(Max 1000 characters)" maxlength="1000"></textarea>
+            <div></div>
+            <button class="buttons" id="button-review">Submit</button>
+        </form>
+   </div>
+   <div class="other-reviews">
+        <h1>The average rating is : {{avg_rating}}</h1>
+        <h1>The number of ratings is : {{ratings_count}}</h1>
+        <div class="empty-space"></div>
+
+        <div class="user-ratings">
+            {% for rating in user_reviews  %}
+                {% if user == rating.username %}
+                    <h1>Your rating : {{rating.rating}}</h1>
+                    <p>Review: {{rating.review}}</p>
+                {% else %}
+                    <h1>Rating from user {{rating.username}} : {{rating.rating}}</h1>
+                    <p>Review: {{rating.review}}</p>
+                {% endif %}
+            {% endfor %}
+        </div>
+   </div>
+</div>
+{% endblock %}

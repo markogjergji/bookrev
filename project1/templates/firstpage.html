@@ -1,0 +1,16 @@
+{% extends "layout.html"%}
+
+{% block body %}
+<div id = "button-container">
+    <form action="{{ url_for('login') }}" method="GET">
+        <button class = "buttons">
+            Log in
+        </button>
+    </form>
+    <form action="{{ url_for('signup') }}" method="GET">
+        <button class = "buttons">
+            Sign up
+        </button>
+    </form>
+</div>
+{% endblock %}
